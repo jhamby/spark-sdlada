@@ -6,7 +6,9 @@ with SDL.Video.Renderers.Makers;
 with SDL.Video.Textures.Makers;
 with SDL.Video.Windows.Makers;
 
-procedure Hello_World is
+procedure Hello_World with
+  SPARK_Mode => Off
+is
    W                : SDL.Video.Windows.Window;
    W_Size           : constant SDL.Positive_Sizes := (800, 640);
    Renderer         : SDL.Video.Renderers.Renderer;
@@ -48,7 +50,7 @@ begin
          end loop;
       end loop Main;
 
-      -- Clean up and exit.
+      --  Clean up and exit.
       W.Finalize;
       SDL.Finalise;
    end if;

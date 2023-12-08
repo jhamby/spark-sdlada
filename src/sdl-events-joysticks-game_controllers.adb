@@ -24,7 +24,9 @@
 with Interfaces.C;
 with Interfaces;
 
-package body SDL.Events.Joysticks.Game_Controllers is
+package body SDL.Events.Joysticks.Game_Controllers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    Query  : constant C.int := -1;

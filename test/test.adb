@@ -15,7 +15,9 @@ with SDL.Video.Windows.Manager;
 with SDL.Versions;
 with System;
 
-procedure Test is
+procedure Test with
+  SPARK_Mode => Off
+is
    W              : SDL.Video.Windows.Window;
    Total_Drivers  : constant Positive := SDL.Video.Total_Drivers;
    Linked_Version : SDL.Versions.Version;

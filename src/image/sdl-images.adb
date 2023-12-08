@@ -23,7 +23,9 @@
 --  SDL.Images
 --------------------------------------------------------------------------------------------------------------------
 
-package body SDL.Images is
+package body SDL.Images with
+  SPARK_Mode => Off
+is
    use type C.char_array;
 
    Format_Strings : constant Format_String_Arrays :=

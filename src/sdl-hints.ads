@@ -24,7 +24,9 @@
 --
 --  Access to library configuration variables.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Hints is
+package SDL.Hints with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  TODO: Make this more robust using more functions and platform specific

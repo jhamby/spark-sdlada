@@ -11,7 +11,9 @@ with SDL.Video.Windows.Makers;
 with Ada.Numerics.Long_Complex_Types;
 use  Ada.Numerics.Long_Complex_Types;
 
-procedure Surface_Direct_Access is
+procedure Surface_Direct_Access with
+  SPARK_Mode => Off
+is
    W : SDL.Video.Windows.Window;
    package Sprite is
       subtype Pixel is Interfaces.Unsigned_16;

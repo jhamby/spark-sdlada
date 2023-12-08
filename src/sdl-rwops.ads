@@ -28,7 +28,9 @@ with Ada.Strings.UTF_Encoding;
 with Interfaces.C;
 private with System;
 
-package SDL.RWops is
+package SDL.RWops with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;

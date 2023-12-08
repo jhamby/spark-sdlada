@@ -26,7 +26,9 @@ with Ada.Finalization;
 private with SDL.C_Pointers;
 with SDL.Events.Joysticks;
 
-package SDL.Inputs.Joysticks is
+package SDL.Inputs.Joysticks with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    Joystick_Error : exception;

@@ -23,7 +23,9 @@
 with Interfaces.C;
 with Interfaces.C.Strings;
 
-package body SDL.Log is
+package body SDL.Log with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    procedure Put (Message : in String) is

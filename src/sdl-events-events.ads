@@ -33,7 +33,9 @@ with SDL.Events.Controllers;
 with SDL.Events.Touches;
 with SDL.Events.Files;
 
-package SDL.Events.Events is
+package SDL.Events.Events with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    type Event_Selector is (Is_Event,

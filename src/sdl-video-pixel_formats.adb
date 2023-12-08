@@ -23,7 +23,9 @@
 
 with Interfaces.C.Strings;
 
-package body SDL.Video.Pixel_Formats is
+package body SDL.Video.Pixel_Formats with
+  SPARK_Mode => Off
+is
 
    function Image (Format : in Pixel_Format_Names) return String is
       function SDL_Get_Pixel_Format_Name (Format : in Pixel_Format_Names) return C.Strings.chars_ptr with
@@ -64,7 +66,7 @@ package body SDL.Video.Pixel_Formats is
       Red_Mask   : out Colour_Mask;
       Green_Mask : out Colour_Mask;
       Blue_Mask  : out Colour_Mask;
-      Alpha_Mask : out Colour_Mask) return Boolean is
+      Alpha_Mask : out Colour_Mask) return Boolean with SPARK_Mode => Off is
 
       function SDL_Pixel_Format_Enum_To_Masks
         (Format     : in  Pixel_Format_Names;

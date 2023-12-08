@@ -25,7 +25,9 @@ with System.Address_To_Access_Conversions;
 with System.Storage_Elements;
 with SDL.Error;
 
-package body SDL.Video.Surfaces is
+package body SDL.Video.Surfaces with
+  SPARK_Mode => Off
+is
 
    function Pixel_Format (Self : in Surface) return Pixel_Formats.Pixel_Format_Access is
    begin

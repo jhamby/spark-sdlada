@@ -30,7 +30,9 @@
 --                i.e. Steam controls it's libs and whilst they are usually up to date, there is no guarantee that
 --                the version you built against has the same functionality as that installed on the user's machine.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Versions is
+package SDL.Versions with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    type Version_Level is mod 2 ** 8 with

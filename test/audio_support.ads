@@ -2,7 +2,9 @@ with SDL.Audio.Devices;
 with SDL.Audio.Sample_Formats;
 with Interfaces;
 
-package Audio_Support is
+package Audio_Support with
+  SPARK_Mode => Off
+is
 
    subtype Sample is Interfaces.Integer_16;
 

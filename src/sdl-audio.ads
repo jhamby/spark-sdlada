@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package SDL.Audio is
+package SDL.Audio with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -34,7 +36,7 @@ package SDL.Audio is
    Audio_Error : exception;
 
    --  Audio drivers.
-   -- TODO: SDL3 - Removes Initialise/Finalise
+   --  TODO: SDL3 - Removes Initialise/Finalise
    function Initialise (Name : in String := "") return Boolean;
 
    procedure Finalise with

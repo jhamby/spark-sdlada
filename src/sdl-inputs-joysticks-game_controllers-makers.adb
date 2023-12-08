@@ -23,7 +23,9 @@
 with Interfaces.C;
 private with SDL.C_Pointers;
 
-package body SDL.Inputs.Joysticks.Game_Controllers.Makers is
+package body SDL.Inputs.Joysticks.Game_Controllers.Makers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function SDL_Game_Controller_Open (Device : in C.int) return SDL.C_Pointers.Game_Controller_Pointer with

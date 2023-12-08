@@ -28,7 +28,9 @@ with SDL.Error;
 --  with SDL.Video.Surfaces.Makers;
 --  with SDL.Log;
 
-package body SDL.Video.Windows is
+package body SDL.Video.Windows with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type Interfaces.Unsigned_32;

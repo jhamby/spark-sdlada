@@ -4,7 +4,9 @@ with SDL.Log;
 
 --  Run with: LD_LIBRARY_PATH=./gen/debug/test:$LD_LIBRARY_PATH ./gen/debug/test/libraries
 
-procedure Libraries is
+procedure Libraries with
+  SPARK_Mode => Off
+is
    Lib : SDL.Libraries.Handles;
 begin
    SDL.Libraries.Load (Lib, "libtestmaths.so");

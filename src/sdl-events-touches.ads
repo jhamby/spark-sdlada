@@ -31,7 +31,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package SDL.Events.Touches is
+package SDL.Events.Touches with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  Touch events.

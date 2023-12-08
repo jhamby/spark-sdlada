@@ -32,7 +32,9 @@
 with Interfaces.C;
 with SDL.Versions;
 
-package SDL.Video.Windows.Manager is
+package SDL.Video.Windows.Manager with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    type WM_Types is (WM_Unknown,

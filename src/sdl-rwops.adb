@@ -23,7 +23,9 @@
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.RWops is
+package body SDL.RWops with
+  SPARK_Mode => Off
+is
    use type C.size_t;
    use type C.Strings.chars_ptr;
 

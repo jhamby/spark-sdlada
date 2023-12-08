@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with System; use System;
 
-package SDL.Audio.Sample_Formats is
+package SDL.Audio.Sample_Formats with
+  SPARK_Mode
+is
 
    type Sample_Bit_Size is mod 2 ** 8 with
      Convention => C;

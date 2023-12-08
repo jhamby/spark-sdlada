@@ -3,7 +3,9 @@ with SDL.Log;
 with SDL.Audio;
 with Audio_Support; use Audio_Support;
 
-procedure Audio is
+procedure Audio with
+  SPARK_Mode => Off
+is
    Total_Drivers : Positive;
    Total_Devices : Positive;
    Success : Boolean;

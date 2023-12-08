@@ -13,7 +13,9 @@ with SDL.Video.Textures.Makers;
 with SDL.Video.Windows.Makers;
 with System;
 
-procedure Stream2 is
+procedure Stream2 with
+  SPARK_Mode => Off
+is
    use type SDL.Dimension;
    use type SDL.Positive_Sizes;
 
@@ -53,6 +55,9 @@ procedure Stream2 is
 
    Moose_Frame_Data : Moose_Frame_Data_Array;
 
+   procedure Load_Moose_Data (Data : out Moose_Frame_Data_Array) with
+     Annotate => (GNATprove, Might_Not_Return);
+
    procedure Load_Moose_Data (Data : out Moose_Frame_Data_Array) is
       Actual_Name : constant String := "../../test/moose.dat";
       Data_File   : Ada.Text_IO.File_Type;
@@ -87,6 +92,13 @@ procedure Stream2 is
 
    type Cached_Moose_Frame_Array is array (Moose_Frames) of
      Texture_2D_Array (1 .. Moose_Size.Height, 1 .. Moose_Size.Width);
+
+   use type Ada.Calendar.Time;
+
+   procedure Cache_Moose (Cache   : in out Cached_Moose_Frame_Array;
+                          Indices : in Moose_Frame_Data_Array;
+                          Palette : Moose_Palette_Array) with
+     Annotate => (GNATprove, Might_Not_Return);
 
    procedure Cache_Moose (Cache   : in out Cached_Moose_Frame_Array;
                           Indices : in Moose_Frame_Data_Array;
@@ -187,6 +199,9 @@ begin
                Actual_Pixels := Cache (Moose_Frame);
 
                End_Time := Ada.Calendar.Clock;
+               SDL.Log.Put_Debug ("Copying to Actual_Pixels took " &
+                                    Duration'Image (End_Time - Start_Time) &
+                                    " seconds.");
             end;
 
             Texture.Unlock;

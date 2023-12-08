@@ -26,8 +26,11 @@
 --------------------------------------------------------------------------------------------------------------------
 with Ada.Streams;
 
-package SDL.RWops.Streams is
+package SDL.RWops.Streams with
+  SPARK_Mode
+is
    pragma Preelaborate;
+   pragma Elaborate_Body;
 
    type RWops_Stream is new Ada.Streams.Root_Stream_Type with private;
 
@@ -36,16 +39,21 @@ package SDL.RWops.Streams is
 
    procedure Close (Stream : in RWops_Stream);
 
-   overriding
-   procedure Read (Stream : in out RWops_Stream;
-                   Item   : out Ada.Streams.Stream_Element_Array;
-                   Last   : out Ada.Streams.Stream_Element_Offset);
+   overriding procedure Read
+     (Stream : in out RWops_Stream;
+      Item   :    out Ada.Streams.Stream_Element_Array;
+      Last   :    out Ada.Streams.Stream_Element_Offset) with
+     SPARK_Mode => Off;
 
-   overriding
-   procedure Write (Stream : in out RWops_Stream; Item : Ada.Streams.Stream_Element_Array);
+   overriding procedure Write
+     (Stream : in out RWops_Stream;
+      Item   :        Ada.Streams.Stream_Element_Array) with
+     SPARK_Mode => Off;
+
 private
-   type RWops_Stream is new Ada.Streams.Root_Stream_Type with
-      record
-         Context : RWops;
-      end record;
+   pragma SPARK_Mode (Off);
+
+   type RWops_Stream is new Ada.Streams.Root_Stream_Type with record
+      Context : RWops;
+   end record;
 end SDL.RWops.Streams;

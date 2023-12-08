@@ -23,7 +23,9 @@
 --  SDL.TTFs
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C.Strings;
-package body SDL.TTFs is
+package body SDL.TTFs with
+  SPARK_Mode => Off
+is
 
    function Initialise return Boolean is
       function TTF_Init return C.int with

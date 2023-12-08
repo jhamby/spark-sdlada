@@ -1,4 +1,3 @@
-with Ada.Unchecked_Conversion;
 with Interfaces.C;
 with SDL;
 with SDL.Events.Events;
@@ -9,7 +8,9 @@ with SDL.Video.Rectangles;
 with SDL.Video.Surfaces;
 with SDL.Video.Windows.Makers;
 
-procedure Load_Surface is
+procedure Load_Surface with
+  SPARK_Mode => Off
+is
    use type Interfaces.C.int;
 
    W           : SDL.Video.Windows.Window;

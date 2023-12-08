@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 private with SDL.C_Pointers;
 
-package body SDL.Inputs.Keyboards is
+package body SDL.Inputs.Keyboards with
+  SPARK_Mode => Off
+is
 
    function Get_Focus return SDL.Video.Windows.ID is
       function SDL_Get_Window_ID (W : in SDL.C_Pointers.Windows_Pointer) return SDL.Video.Windows.ID with

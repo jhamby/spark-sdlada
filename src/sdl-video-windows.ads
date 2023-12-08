@@ -33,7 +33,9 @@ with SDL.Video.Rectangles;
 with SDL.Video.Surfaces;
 with System;
 
-package SDL.Video.Windows is
+package SDL.Video.Windows with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    Window_Error : exception;

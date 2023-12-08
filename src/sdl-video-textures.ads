@@ -31,7 +31,9 @@ with SDL.Video.Pixel_Formats;
 with SDL.Video.Pixels;
 with SDL.Video.Rectangles;
 
-package SDL.Video.Textures is
+package SDL.Video.Textures with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    Texture_Error : exception;

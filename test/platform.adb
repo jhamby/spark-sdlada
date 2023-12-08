@@ -6,7 +6,9 @@ with System;
 
 use type System.Bit_Order;
 
-procedure Platform is
+procedure Platform with
+  SPARK_Mode
+is
    Endian : System.Bit_Order renames System.Default_Bit_Order;
 begin
    SDL.Log.Set (Category => SDL.Log.Application, Priority => SDL.Log.Debug);
@@ -15,9 +17,11 @@ begin
 
    --  Endian-ness.
    SDL.Log.Put_Debug ("Bit Order              : " & System.Bit_Order'Image (Endian));
+   pragma Warnings (Off, "condition is always False", Reason => "platform-specific code paths");
    SDL.Log.Put_Debug ("...in other words      : " &
                       (if Endian = System.High_Order_First then "Big-endian" else "Little-endian"));
 
+   pragma Warnings (On, "condition is always False");
    --  CPU Info.
    SDL.Log.Put_Debug ("CPU count              : "  & Positive'Image (SDL.CPUS.Count));
    SDL.Log.Put_Debug ("CPU cache line size    : "  & Positive'Image (SDL.CPUS.Cache_Line_Size));

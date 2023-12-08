@@ -22,10 +22,11 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 with System;
-with Ada.Unchecked_Conversion;
 with SDL.Error;
 
-package body SDL.Video.Textures is
+package body SDL.Video.Textures with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type SDL.C_Pointers.Texture_Pointer;

@@ -23,7 +23,9 @@
 with Interfaces.C;
 with SDL.Error;
 
-package body SDL.Video.Renderers is
+package body SDL.Video.Renderers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type SDL.C_Pointers.Renderer_Pointer;

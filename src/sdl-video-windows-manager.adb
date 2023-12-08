@@ -20,7 +20,9 @@
 --     3. This notice may not be removed or altered from any source
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
-package body SDL.Video.Windows.Manager is
+package body SDL.Video.Windows.Manager with
+  SPARK_Mode => Off
+is
    function Get_WM_Info (Win : in Window; Info : out WM_Info) return Boolean is
       function SDL_Get_Window_WM_Info (W : in SDL.C_Pointers.Windows_Pointer; Info : out WM_Info) return SDL_Bool with
         Import        => True,

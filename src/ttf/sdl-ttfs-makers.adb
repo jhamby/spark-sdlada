@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Error;
 
-package body SDL.TTFs.Makers is
+package body SDL.TTFs.Makers with
+  SPARK_Mode => Off
+is
 
    procedure Create (Font       : in out Fonts;
                      File_Name  : in String;

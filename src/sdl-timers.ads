@@ -26,7 +26,9 @@
 
 with Interfaces;
 
-package SDL.Timers is
+package SDL.Timers with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    type Milliseconds is new Interfaces.Unsigned_32;

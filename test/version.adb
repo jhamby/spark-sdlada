@@ -2,7 +2,9 @@ with SDL;
 with SDL.Log;
 with SDL.Versions;
 
-procedure Version is
+procedure Version with
+  SPARK_Mode => Off
+is
    Linked_Version : SDL.Versions.Version;
 begin
    SDL.Log.Set (Category => SDL.Log.Application, Priority => SDL.Log.Debug);

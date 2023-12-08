@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Ada.Finalization; use Ada.Finalization;
 
-package body SDL.Video.Palettes is
+package body SDL.Video.Palettes with
+  SPARK_Mode => Off
+is
    --  function Element_Value (Container : in Palette_array; Pos : in Palette_Cursor) return Colour is
    --  begin
    --     return Pos.Current.all;

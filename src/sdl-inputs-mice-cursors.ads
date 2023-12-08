@@ -25,7 +25,11 @@
 with Ada.Finalization;
 private with SDL.C_Pointers;
 
-package SDL.Inputs.Mice.Cursors is
+package SDL.Inputs.Mice.Cursors with
+  SPARK_Mode => Off
+is
+   pragma Preelaborate;
+
    --  Don't confuse this package with any type of Ada iterator, this is for visual mouse cursors.
 
    type Cursor is new Ada.Finalization.Limited_Controlled with private;
@@ -62,4 +66,5 @@ private
          Internal : SDL.C_Pointers.Cursor_Pointer := null;
          Owns     : Boolean                       := True;
       end record;
+
 end SDL.Inputs.Mice.Cursors;

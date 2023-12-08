@@ -24,7 +24,9 @@
 --
 --  Error message handling.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Error is
+package SDL.Error with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    procedure Clear with

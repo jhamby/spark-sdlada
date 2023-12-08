@@ -25,7 +25,9 @@ with Interfaces.C.Strings;
 private with SDL.C_Pointers;
 with SDL.Error;
 
-package body SDL.Video.Windows.Makers is
+package body SDL.Video.Windows.Makers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type SDL.C_Pointers.Windows_Pointer;

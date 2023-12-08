@@ -23,7 +23,9 @@
 with Interfaces.C;
 with Interfaces.C.Strings;
 
-package body SDL.Error is
+package body SDL.Error with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    procedure Set (S : in String) is

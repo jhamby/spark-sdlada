@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package SDL.Video.Rectangles is
+package SDL.Video.Rectangles with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -41,24 +43,22 @@ package SDL.Video.Rectangles is
    type Point_Arrays is array (C.size_t range <>) of aliased Point with
      Convention => C;
 
-   type Line_Segment is
-      record
-         Start  : SDL.Coordinates;
-         Finish : SDL.Coordinates;
-      end record with
+   type Line_Segment is record
+      Start  : SDL.Coordinates;
+      Finish : SDL.Coordinates;
+   end record with
      Convention => C;
 
    type Line_Arrays is array (C.size_t range <>) of aliased Line_Segment with
      Convention => C;
 
    --  TODO: Replace with Point and Sizes?
-   type Rectangle is
-      record
-         X      : SDL.Coordinate;
-         Y      : SDL.Coordinate;
-         Width  : SDL.Natural_Dimension;
-         Height : SDL.Natural_Dimension;
-      end record with
+   type Rectangle is record
+      X      : SDL.Coordinate;
+      Y      : SDL.Coordinate;
+      Width  : SDL.Natural_Dimension;
+      Height : SDL.Natural_Dimension;
+   end record with
      Convention => C;
 
    Null_Rectangle : constant Rectangle := (others => 0);
@@ -69,14 +69,22 @@ package SDL.Video.Rectangles is
    type Rectangle_Access is access all Rectangle with
      Convention => C;
 
-   function Enclose (Points : in Point_Arrays; Clip : in Rectangle; Enclosed : out Rectangle) return Boolean;
+   function Enclose
+     (Points : in Point_Arrays; Clip : in Rectangle; Enclosed : out Rectangle)
+      return Boolean with
+     SPARK_Mode => Off;
+
    procedure Enclose (Points : in Point_Arrays; Enclosed : out Rectangle);
 
    function Has_Intersected (A, B : in Rectangle) return Boolean;
 
-   function Intersects (A, B : in Rectangle; Intersection : out Rectangle) return Boolean;
+   function Intersects
+     (A, B : in Rectangle; Intersection : out Rectangle) return Boolean with
+     SPARK_Mode => Off;
 
-   function Clip_To (Clip_Area : in Rectangle; Line : in out Line_Segment) return Boolean;
+   function Clip_To
+     (Clip_Area : in Rectangle; Line : in out Line_Segment) return Boolean with
+     SPARK_Mode => Off;
 
    function Union (A, B : in Rectangle) return Rectangle;
 end SDL.Video.Rectangles;

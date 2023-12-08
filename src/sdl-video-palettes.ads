@@ -28,7 +28,9 @@
 with Ada.Iterator_Interfaces;
 with Interfaces.C.Pointers;
 
-package SDL.Video.Palettes is
+package SDL.Video.Palettes with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -49,6 +51,8 @@ package SDL.Video.Palettes is
 
    Null_Colour : constant Colour := (others => <>);
 
+   pragma Warnings (Off, "8 bits of * unused", Reason => "padding");
+
    type RGB_Colour is
       record
          Red   : Colour_Component := Colour_Component'First;
@@ -59,6 +63,8 @@ package SDL.Video.Palettes is
      Size       => Colour_Component'Size * 4;
 
    Null_RGB_Colour : constant RGB_Colour := (others => <>);
+
+   pragma Warnings (On, "8 bits of * unused");
 
    --  Cursor type for our iterator.
    type Cursor is private;
@@ -94,6 +100,7 @@ package SDL.Video.Palettes is
 
    Empty_Palette : constant Palette;
 private
+   pragma SPARK_Mode (Off);
 
    type Colour_Array is array (C.size_t range <>) of aliased Colour with
      Convention => C;

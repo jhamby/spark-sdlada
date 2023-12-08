@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package body SDL.CPUS is
+package body SDL.CPUS with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function Count return Positive is

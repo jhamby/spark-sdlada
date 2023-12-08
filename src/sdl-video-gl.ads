@@ -30,7 +30,9 @@ private with SDL.C_Pointers;
 with SDL.Video.Windows;
 with SDL.Video.Textures;
 
-package SDL.Video.GL is
+package SDL.Video.GL with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    SDL_GL_Error : exception;
@@ -122,6 +124,9 @@ package SDL.Video.GL is
    function Is_Accelerated return Boolean;
    procedure Set_Accelerated (On : in Boolean);
 
+   function Is_Retained_Backing return Boolean;
+   procedure Set_Retained_Backing (On : in Boolean);
+
    function Context_Major_Version return Major_Versions;
    procedure Set_Context_Major_Version (Version : Major_Versions);
 
@@ -184,6 +189,8 @@ package SDL.Video.GL is
    procedure Unload_Library with
      Inline => True;
 private
+   pragma SPARK_Mode (Off);
+
    type Contexts is new Ada.Finalization.Limited_Controlled with
       record
          Internal : SDL.C_Pointers.GL_Context_Pointer;

@@ -20,10 +20,11 @@
 --     3. This notice may not be removed or altered from any source
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
-with Ada.Unchecked_Conversion;
 with SDL.Error;
 
-package body SDL.Video.Rectangles is
+package body SDL.Video.Rectangles with
+  SPARK_Mode => Off
+is
 
    function Enclose (Points : in Point_Arrays; Clip : in Rectangle; Enclosed : out Rectangle) return Boolean is
       function SDL_Enclose_Points (P    : in Point_Arrays;

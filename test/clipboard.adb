@@ -4,7 +4,9 @@ with SDL.Log;
 with SDL.Video.Windows;
 with SDL.Video.Windows.Makers;
 
-procedure Clipboard is
+procedure Clipboard with
+  SPARK_Mode => Off
+is
    W : SDL.Video.Windows.Window;
 begin
    SDL.Log.Set (Category => SDL.Log.Application, Priority => SDL.Log.Debug);

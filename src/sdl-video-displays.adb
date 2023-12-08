@@ -23,7 +23,9 @@
 
 with SDL.Error;
 
-package body SDL.Video.Displays is
+package body SDL.Video.Displays with
+  SPARK_Mode => Off
+is
 
    function Total return Display_Indices is
       --  This function returns a value >= 1, use this as a new lower type bound.

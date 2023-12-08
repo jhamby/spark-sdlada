@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Ada.Strings.UTF_Encoding;
 
-package SDL.Clipboard is
+package SDL.Clipboard with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    Clipboard_Error : exception;

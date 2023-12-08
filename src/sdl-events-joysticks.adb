@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package body SDL.Events.Joysticks is
+package body SDL.Events.Joysticks with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    Query  : constant C.int := -1;

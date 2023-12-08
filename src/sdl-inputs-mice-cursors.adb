@@ -21,7 +21,9 @@
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
 
-package body SDL.Inputs.Mice.Cursors is
+package body SDL.Inputs.Mice.Cursors with
+  SPARK_Mode => Off
+is
    use type SDL.C_Pointers.Cursor_Pointer;
 
    procedure Create_System_Cursor (Self : in out Cursor; Cursor_Name : System_Cursors) is

@@ -9,7 +9,9 @@ with SDL.Video.Palettes;
 with SDL.Video.Surfaces;
 with SDL.Video.Windows.Makers;
 
-procedure TTF is
+procedure TTF with
+  SPARK_Mode => Off
+is
    W              : SDL.Video.Windows.Window;
    Window_Surface : SDL.Video.Surfaces.Surface;
 --     Renderer       : SDL.Video.Renderers.Renderer;

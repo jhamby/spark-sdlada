@@ -24,7 +24,9 @@
 --
 --  Determine which platform we are running on.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Platform is
+package SDL.Platform with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    type Platforms is (Windows, Mac_OS_X, Linux, BSD, iOS, Android);

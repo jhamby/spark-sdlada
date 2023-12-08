@@ -20,7 +20,9 @@
 --     3. This notice may not be removed or altered from any source
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
-package body SDL.Platform is
+package body SDL.Platform with
+  SPARK_Mode
+is
    --  Bring in the platform specific version for each build of the library. It's also defined as inline so
    --  that the compiler can eliminate redundant code in the static expressions that use this function.
    function Get return Platforms is separate;

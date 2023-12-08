@@ -7,7 +7,9 @@ with SDL.Video.Surfaces;
 with SDL.Video.Windows;
 with SDL.Video.Windows.Makers;
 
-procedure Create_Window is
+procedure Create_Window with
+  SPARK_Mode => Off
+is
 
    package US renames Ada.Strings.Unbounded;
    function "+" (S : String) return US.Unbounded_String

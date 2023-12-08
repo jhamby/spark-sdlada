@@ -24,7 +24,9 @@
 --
 --  Constructor subprograms which don't dispatch for Window types.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Video.Windows.Makers is
+package SDL.Video.Windows.Makers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    --  Create a window with the specified title, position, dimensions and

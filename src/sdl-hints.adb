@@ -24,7 +24,9 @@ with Interfaces.C;
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.Hints is
+package body SDL.Hints with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type C.Strings.chars_ptr;

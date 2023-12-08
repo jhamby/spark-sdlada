@@ -21,7 +21,9 @@
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
 
-package body SDL.Images.Versions is
+package body SDL.Images.Versions with
+  SPARK_Mode => Off
+is
 
    procedure Linked_With (Info : in out SDL.Versions.Version) is
       function IMG_Linked_Version return access SDL.Versions.Version with

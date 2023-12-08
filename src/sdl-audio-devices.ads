@@ -32,7 +32,9 @@ generic
    type Frame_Type is private;
    type Buffer_Index is (<>);
    type Buffer_Type is array (Buffer_Index range <>) of Frame_Type;
-package SDL.Audio.Devices is
+package SDL.Audio.Devices with
+  SPARK_Mode
+is
 
    Audio_Device_Error : exception;
 

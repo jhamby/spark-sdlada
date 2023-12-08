@@ -24,7 +24,9 @@ with Interfaces.C;
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.Inputs.Joysticks is
+package body SDL.Inputs.Joysticks with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function Total return All_Devices is

@@ -23,7 +23,9 @@
 --  Linux implementation.
 --------------------------------------------------------------------------------------------------------------------
 separate (SDL.Platform)
-function Get return Platforms is
+function Get return Platforms with
+  SPARK_Mode
+is
 begin
    return Linux;
 end Get;

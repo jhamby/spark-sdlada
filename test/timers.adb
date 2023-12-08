@@ -2,7 +2,9 @@ with SDL;
 with SDL.Log;
 with SDL.Timers;
 
-procedure Timers is
+procedure Timers with
+  SPARK_Mode => Off
+is
    function Ticks return String is
      (SDL.Timers.Milliseconds'Image (SDL.Timers.Ticks));
 begin

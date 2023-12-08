@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Events.Joysticks;
 
-package SDL.Events.Controllers is
+package SDL.Events.Controllers with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  Game controller events.

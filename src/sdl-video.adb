@@ -24,7 +24,9 @@
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.Video is
+package body SDL.Video with
+  SPARK_Mode => Off
+is
 
    function Is_Screen_Saver_Enabled return Boolean is
       function SDL_Is_Screen_Saver_Enabled return C.int with

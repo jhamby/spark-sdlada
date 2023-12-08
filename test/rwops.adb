@@ -2,7 +2,9 @@ with Ada.Directories;
 with Ada.Text_IO;
 with SDL.RWops.Streams;
 
-procedure Rwops is
+procedure Rwops with
+  SPARK_Mode => Off
+is
    package Text_IO renames Ada.Text_IO;
    package Directories renames Ada.Directories;
 

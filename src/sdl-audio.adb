@@ -24,7 +24,9 @@
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.Audio is
+package body SDL.Audio with
+  SPARK_Mode => Off
+is
 
    function Initialise (Name : in String := "") return Boolean is
       function SDL_Audio_Init (C_Name : in C.Strings.chars_ptr) return C.int with

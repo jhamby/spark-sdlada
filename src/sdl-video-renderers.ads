@@ -31,7 +31,9 @@ with SDL.Video.Rectangles;
 with SDL.Video.Textures;
 with SDL.Video.Windows;
 
-package SDL.Video.Renderers is
+package SDL.Video.Renderers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    --  TODO: Finish this.
@@ -129,6 +131,8 @@ package SDL.Video.Renderers is
 
    function Get_Renderer (Window : in SDL.Video.Windows.Window) return Renderer;
 private
+   pragma SPARK_Mode (Off);
+
    type Renderer is new Ada.Finalization.Limited_Controlled with
       record
          Internal : SDL.C_Pointers.Renderer_Pointer := null;

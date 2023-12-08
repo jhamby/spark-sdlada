@@ -20,7 +20,9 @@
 --     3. This notice may not be removed or altered from any source
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
-package body SDL is
+package body SDL with
+  SPARK_Mode => Off
+is
 
    function Initialise (Flags : in Init_Flags := Enable_Everything) return Boolean is
       function SDL_Init (Flags : in Init_Flags := Enable_Everything) return C.int with

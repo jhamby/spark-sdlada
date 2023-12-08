@@ -8,7 +8,9 @@ with SDL.Video.Renderers.Makers;
 with SDL.Video.Textures.Makers;
 with SDL.Video.Windows.Makers;
 
-procedure Mouse is
+procedure Mouse with
+  SPARK_Mode => Off
+is
    Window_Size : constant SDL.Positive_Sizes := SDL.Positive_Sizes'(800, 640);
 
    W           : SDL.Video.Windows.Window;

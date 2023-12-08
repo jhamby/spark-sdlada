@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Error;
 
-package body SDL.RWops.Streams is
+package body SDL.RWops.Streams with
+  SPARK_Mode => Off
+is
    use type Interfaces.C.unsigned_long;
 
    function Open (Op : in RWops) return RWops_Stream is

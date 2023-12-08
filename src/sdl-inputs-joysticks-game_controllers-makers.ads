@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 --  SDL.Inputs.Joysticks.Game_Controllers.Makers
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Inputs.Joysticks.Game_Controllers.Makers is
+package SDL.Inputs.Joysticks.Game_Controllers.Makers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    function Create (Device : in Devices) return Game_Controller;

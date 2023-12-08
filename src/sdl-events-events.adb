@@ -23,7 +23,9 @@
 with Interfaces.C;
 with SDL.Error;
 
-package body SDL.Events.Events is
+package body SDL.Events.Events with
+  SPARK_Mode => Off
+is
 
    function Poll (Event : out Events) return Boolean is
       function SDL_Poll_Event (Event : out Events) return Interfaces.C.int with

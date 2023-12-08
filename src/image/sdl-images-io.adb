@@ -23,7 +23,9 @@
 with SDL.Error;
 with SDL.C_Pointers;
 
-package body SDL.Images.IO is
+package body SDL.Images.IO with
+  SPARK_Mode => Off
+is
    function Make_Surface_From_Pointer (S    : in Video.Surfaces.Internal_Surface_Pointer;
                                        Owns : in Boolean := False) return Video.Surfaces.Surface with
      Import     => True,

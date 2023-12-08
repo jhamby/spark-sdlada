@@ -25,7 +25,9 @@ with Interfaces.C;
 private with SDL.C_Pointers;
 with SDL.Error;
 
-package body SDL.Video.Textures.Makers is
+package body SDL.Video.Textures.Makers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type SDL.C_Pointers.Texture_Pointer;

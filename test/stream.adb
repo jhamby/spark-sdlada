@@ -12,7 +12,9 @@ with SDL.Video.Textures.Makers;
 with SDL.Video.Windows.Makers;
 with System;
 
-procedure Stream is
+procedure Stream with
+  SPARK_Mode => Off
+is
    use type SDL.Dimension;
    use type SDL.Positive_Sizes;
 
@@ -50,6 +52,9 @@ procedure Stream is
    type Moose_Frame_Data_Array is array (Moose_Frames'Range, 0 .. Moose_Frame_Size) of Moose_Colour_Index;
 
    Moose_Frame_Data : Moose_Frame_Data_Array;
+
+   procedure Load_Moose_Data (Data : out Moose_Frame_Data_Array) with
+     Annotate => (GNATprove, Might_Not_Return);
 
    procedure Load_Moose_Data (Data : out Moose_Frame_Data_Array) is
       Actual_Name : constant String := "../../test/moose.dat";
@@ -119,7 +124,6 @@ procedure Stream is
      (Index              => SDL.Dimension,
       Element            => SDL.Video.Pixels.ARGB_8888,
       Element_Array_1D   => SDL.Video.Pixels.ARGB_8888_Array,
-      Element_Array_2D   => Texture_2D_Array,
       Default_Terminator => SDL.Video.Pixels.ARGB_8888'(others => SDL.Video.Palettes.Colour_Component'First));
 
    procedure Update_Texture_2 (Pointer : in Texture_2D.Pointer) is
@@ -153,6 +157,11 @@ procedure Stream is
 
    type Cached_Moose_Frame_Array is array (Moose_Frames) of
      Texture_2D_Array (1 .. Moose_Size.Height, 1 .. Moose_Size.Width);
+
+   procedure Cache_Moose (Cache   : in out Cached_Moose_Frame_Array;
+                          Indices : in Moose_Frame_Data_Array;
+                          Palette : in Moose_Palette_Array) with
+     Annotate => (GNATprove, Might_Not_Return);
 
    procedure Cache_Moose (Cache   : in out Cached_Moose_Frame_Array;
                           Indices : in Moose_Frame_Data_Array;

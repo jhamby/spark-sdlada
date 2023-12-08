@@ -24,7 +24,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Events.Joysticks.Game_Controllers;
 
-package SDL.Inputs.Joysticks.Game_Controllers is
+package SDL.Inputs.Joysticks.Game_Controllers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    type Bind_Types is (None, Button, Axis, Hat) with

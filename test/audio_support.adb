@@ -1,6 +1,6 @@
-with Ada.Unchecked_Conversion;
-
-package body Audio_Support is
+package body Audio_Support with
+  SPARK_Mode => Off
+is
 
    procedure Callback
      (User   : in Audio_Devices.User_Data_Access;

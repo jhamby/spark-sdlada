@@ -29,7 +29,11 @@ with SDL.Video.Surfaces;
 with SDL.Video.Textures;
 with SDL.RWops;
 
-package SDL.Images.IO is
+package SDL.Images.IO with
+  SPARK_Mode => Off
+is
+   pragma Preelaborate;
+
    --  TODO: I don't like the idea of leaving the freeing of the Source to the programmer, this is error prone and will
    --        cause leaks! I would prefer the RWops object be controlled.
    procedure Create (Surface : in out Video.Surfaces.Surface; File_Name : in String);

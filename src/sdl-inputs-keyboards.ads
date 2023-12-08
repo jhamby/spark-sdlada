@@ -26,11 +26,13 @@ with SDL.Events.Keyboards;
 with SDL.Video.Rectangles;
 with SDL.Video.Windows;
 
-package SDL.Inputs.Keyboards is
+package SDL.Inputs.Keyboards with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    function Get_Focus return SDL.Video.Windows.ID with
-     Inline => True;
+     Inline => True, SPARK_Mode => Off;
 
    --  TODO:
    --     type Key_State_Array is array () of SDL.Video.Windows.Scan_Codes;
@@ -47,14 +49,14 @@ package SDL.Inputs.Keyboards is
      Inline => True;
 
    function Is_Screen_Keyboard_Visible (Window : in SDL.Video.Windows.Window) return Boolean with
-     Inline => True;
+     Inline => True, SPARK_Mode => Off;
 
    --  Text input.
    function Is_Text_Input_Enabled return Boolean with
      Inline => True;
 
    procedure Set_Text_Input_Rectangle (Rectangle : in SDL.Video.Rectangles.Rectangle) with
-     Inline => True;
+     Inline => True, SPARK_Mode => Off;
 
    procedure Start_Text_Input with
      Inline => True;

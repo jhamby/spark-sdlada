@@ -29,7 +29,9 @@ with Interfaces.C;
 with Interfaces.C.Pointers;
 with SDL.Video.Palettes;
 
-package SDL.Video.Pixels is
+package SDL.Video.Pixels with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -75,7 +77,6 @@ package SDL.Video.Pixels is
       type Index is (<>);
       type Element is private;
       type Element_Array_1D is array (Index range <>) of aliased Element;
-      type Element_Array_2D is array (Index range <>, Index range <>) of aliased Element;
 
       Default_Terminator : Element;
    package Texture_Data is

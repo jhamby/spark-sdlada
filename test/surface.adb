@@ -1,4 +1,3 @@
-with Ada.Unchecked_Conversion;
 with SDL;
 with SDL.Events.Events;
 with SDL.Events.Keyboards;
@@ -8,7 +7,9 @@ with SDL.Video.Rectangles;
 with SDL.Video.Surfaces;
 with SDL.Video.Windows.Makers;
 
-procedure Surface is
+procedure Surface with
+  SPARK_Mode => Off
+is
    W : SDL.Video.Windows.Window;
 begin
    SDL.Log.Set (Category => SDL.Log.Application, Priority => SDL.Log.Debug);

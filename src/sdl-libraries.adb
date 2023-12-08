@@ -25,7 +25,9 @@ with Interfaces.C.Strings;
 with SDL.Error;
 with System;
 
-package body SDL.Libraries is
+package body SDL.Libraries with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    procedure Load (Self : out Handles; Name : in String) is

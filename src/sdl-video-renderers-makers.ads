@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Video.Surfaces;
 
-package SDL.Video.Renderers.Makers is
+package SDL.Video.Renderers.Makers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    procedure Create

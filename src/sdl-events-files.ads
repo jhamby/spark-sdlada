@@ -25,7 +25,9 @@
 with Interfaces.C.Strings;
 with System;
 
-package SDL.Events.Files is
+package SDL.Events.Files with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  Drag and drop events.

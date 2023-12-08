@@ -21,7 +21,9 @@
 --     distribution.
 --------------------------------------------------------------------------------------------------------------------
 
-package body SDL.TTFs.Versions is
+package body SDL.TTFs.Versions with
+  SPARK_Mode => Off
+is
 
    procedure Linked_With (Info : in out SDL.Versions.Version) is
       function TTF_Linked_Version return access SDL.Versions.Version with

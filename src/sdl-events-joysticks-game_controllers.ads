@@ -25,7 +25,9 @@
 --  Game controller specific events.
 --------------------------------------------------------------------------------------------------------------------
 
-package SDL.Events.Joysticks.Game_Controllers is
+package SDL.Events.Joysticks.Game_Controllers with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    type Axes is (Invalid,

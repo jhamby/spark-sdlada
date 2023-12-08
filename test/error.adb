@@ -2,7 +2,9 @@ with SDL;
 with SDL.Error;
 with SDL.Log;
 
-procedure Error is
+procedure Error with
+  SPARK_Mode => Off
+is
 begin
    SDL.Log.Set (Category => SDL.Log.Application, Priority => SDL.Log.Debug);
 

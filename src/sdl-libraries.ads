@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Ada.Finalization;
 
-package SDL.Libraries is
+package SDL.Libraries with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    Library_Error : exception;

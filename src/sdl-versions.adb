@@ -23,7 +23,9 @@
 with Interfaces.C;
 with Interfaces.C.Strings;
 
-package body SDL.Versions is
+package body SDL.Versions with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function Revision return String is

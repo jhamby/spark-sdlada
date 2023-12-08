@@ -23,7 +23,9 @@
 with Ada.Finalization;
 with System.Address_To_Access_Conversions;
 
-package body SDL.Video.Surfaces.Makers is
+package body SDL.Video.Surfaces.Makers with
+  SPARK_Mode => Off
+is
    procedure Create (Self       : in out Surface;
                      Size       : in SDL.Sizes;
                      BPP        : in Pixel_Depths;

@@ -25,7 +25,9 @@ with Interfaces.C.Strings;
 with SDL.Error;
 with SDL.Video.Windows;
 
-package body SDL.Clipboard is
+package body SDL.Clipboard with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    procedure Check_For_Window is

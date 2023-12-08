@@ -22,7 +22,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package body SDL.Power is
+package body SDL.Power with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    procedure Info (Data : in out Battery_Info) is

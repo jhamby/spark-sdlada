@@ -24,7 +24,9 @@ with Interfaces.C.Strings;
 with SDL.Error;
 with SDL.RWops;
 
-package body SDL.Inputs.Joysticks.Game_Controllers is
+package body SDL.Inputs.Joysticks.Game_Controllers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type C.Strings.chars_ptr;

@@ -26,7 +26,11 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package SDL.Images is
+package SDL.Images with
+  SPARK_Mode
+is
+   pragma Preelaborate;
+
    package C renames Interfaces.C;
 
    Image_Error : exception;

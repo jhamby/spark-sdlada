@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with System.Storage_Elements;
 
-package SDL.Video.Surfaces.Makers is
+package SDL.Video.Surfaces.Makers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    procedure Create (Self       : in out Surface;

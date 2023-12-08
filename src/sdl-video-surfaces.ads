@@ -33,7 +33,9 @@ with SDL.Video.Palettes;
 with SDL.Video.Pixel_Formats;
 with SDL.Video.Rectangles;
 
-package SDL.Video.Surfaces is
+package SDL.Video.Surfaces with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -226,7 +228,11 @@ private
       end record with
      Convention => C;
 
+   pragma Warnings (Off, "aggregate not fully initialized");
+
    Null_Internal_Surface : constant Internal_Surface := (others => <>);
+
+   pragma Warnings (On, "aggregate not fully initialized");
 
    --  If the Dont_Free flag is set on the Internal_Surface, then calling SDL_FreeSurface won't decrease the reference
    --  count. This is set when getting a window's surface.

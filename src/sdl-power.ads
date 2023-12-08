@@ -24,7 +24,9 @@
 --
 --  Battery access on the target platform.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Power is
+package SDL.Power with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    type State is

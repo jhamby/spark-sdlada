@@ -30,7 +30,11 @@ with Interfaces.C;
 with SDL.Video.Palettes;
 with SDL.Video.Surfaces;
 
-package SDL.TTFs is
+package SDL.TTFs with
+  SPARK_Mode => Off
+is
+   pragma Preelaborate;
+
    package UTF_Strings renames Ada.Strings.UTF_Encoding;
    package C renames Interfaces.C;
 

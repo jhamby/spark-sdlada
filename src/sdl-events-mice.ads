@@ -28,7 +28,9 @@ with Ada.Unchecked_Conversion;
 with Interfaces;
 with SDL.Video.Windows;
 
-package SDL.Events.Mice is
+package SDL.Events.Mice with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    --  Mouse events.

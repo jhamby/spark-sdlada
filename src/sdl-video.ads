@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with Interfaces.C;
 
-package SDL.Video is
+package SDL.Video with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;

@@ -24,7 +24,9 @@ with Interfaces.C;
 private with SDL.C_Pointers;
 with SDL.Error;
 
-package body SDL.Inputs.Mice is
+package body SDL.Inputs.Mice with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function Capture (Enabled : in Boolean) return Supported is

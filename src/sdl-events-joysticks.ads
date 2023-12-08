@@ -24,7 +24,9 @@
 --
 --  Joystick specific events.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Events.Joysticks is
+package SDL.Events.Joysticks with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  Joystick events.

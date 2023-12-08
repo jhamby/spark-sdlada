@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Versions;
 
-package SDL.Images.Versions is
+package SDL.Images.Versions with
+  SPARK_Mode
+is
    --  These allow the user to determine which version of SDLAda_Image they compiled with.
    Compiled_Major : constant SDL.Versions.Version_Level with
      Import        => True,

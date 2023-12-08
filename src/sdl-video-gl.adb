@@ -24,7 +24,9 @@ with Ada.Unchecked_Conversion;
 with Interfaces.C.Strings;
 with SDL.Error;
 
-package body SDL.Video.GL is
+package body SDL.Video.GL with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    use type SDL.C_Pointers.GL_Context_Pointer;
@@ -374,6 +376,26 @@ package body SDL.Video.GL is
          raise SDL_GL_Error with SDL.Error.Get;
       end if;
    end Set_Accelerated;
+
+   function Is_Retained_Backing return Boolean is
+      Data   : C.int;
+      Result : constant C.int := SDL_GL_Get_Attribute (Attribute_Retained_Backing, Data);
+   begin
+      if Result /= Success then
+         raise SDL_GL_Error with SDL.Error.Get;
+      end if;
+
+      return (Result = 1);
+   end Is_Retained_Backing;
+
+   procedure Set_Retained_Backing (On : in Boolean) is
+      Data   : constant C.int := (if On then 1 else 0);
+      Result : constant C.int := SDL_GL_Set_Attribute (Attribute_Retained_Backing, Data);
+   begin
+      if Result /= Success then
+         raise SDL_GL_Error with SDL.Error.Get;
+      end if;
+   end Set_Retained_Backing;
 
    function Context_Major_Version return Major_Versions is
       Data   : C.int;

@@ -24,7 +24,9 @@ with Interfaces.C.Strings;
 with SDL.Error;
 with Ada.Unchecked_Conversion;
 
-package body SDL.Audio.Devices is
+package body SDL.Audio.Devices with
+  SPARK_Mode
+is
    package C renames Interfaces.C;
 
    function Total_Devices

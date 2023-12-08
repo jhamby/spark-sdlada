@@ -24,7 +24,9 @@
 --
 --  Message logging.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.Log is
+package SDL.Log with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  Messages longer than Max_Length will be truncated.

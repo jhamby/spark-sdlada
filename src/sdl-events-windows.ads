@@ -26,7 +26,9 @@
 --------------------------------------------------------------------------------------------------------------------
 with SDL.Video.Windows;
 
-package SDL.Events.Windows is
+package SDL.Events.Windows with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    --  Window events.

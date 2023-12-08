@@ -27,7 +27,9 @@
 with SDL.Video.Surfaces;
 with SDL.Video.Renderers;
 
-package SDL.Video.Textures.Makers is
+package SDL.Video.Textures.Makers with
+  SPARK_Mode => Off
+is
    pragma Preelaborate;
 
    procedure Create

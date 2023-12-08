@@ -24,7 +24,9 @@
 --
 --  Platform CPU information retrieval.
 --------------------------------------------------------------------------------------------------------------------
-package SDL.CPUS is
+package SDL.CPUS with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    --  TODO: Add a subprogram to return CPU architecture as not all platforms will have the same one, i.e.

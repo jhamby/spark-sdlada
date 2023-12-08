@@ -23,7 +23,9 @@
 with Interfaces.C;
 private with SDL.C_Pointers;
 
-package body SDL.Video.Renderers.Makers is
+package body SDL.Video.Renderers.Makers with
+  SPARK_Mode => Off
+is
    package C renames Interfaces.C;
 
    function Get_Internal_Window (Self : in SDL.Video.Windows.Window) return SDL.C_Pointers.Windows_Pointer with

@@ -25,12 +25,13 @@
 --  Description of various pixel formats.
 --------------------------------------------------------------------------------------------------------------------
 with Ada.Characters.Latin_1;
-with Ada.Unchecked_Conversion;
 with Interfaces;
 with Interfaces.C;
 with SDL.Video.Palettes;
 
-package SDL.Video.Pixel_Formats is
+package SDL.Video.Pixel_Formats with
+  SPARK_Mode
+is
    pragma Preelaborate;
 
    package C renames Interfaces.C;
@@ -761,7 +762,8 @@ package SDL.Video.Pixel_Formats is
       Green_Mask : out Colour_Mask;
       Blue_Mask  : out Colour_Mask;
       Alpha_Mask : out Colour_Mask) return Boolean with
-     Inline => True;
+     Inline => True,
+     SPARK_Mode => Off;
 
    --  Gamma
    type Gamma_Value is mod 2 ** 16 with
