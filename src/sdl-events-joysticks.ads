@@ -27,7 +27,7 @@
 package SDL.Events.Joysticks with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    --  Joystick events.
    Axis_Motion       : constant Event_Types := 16#0000_0600#;

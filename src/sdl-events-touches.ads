@@ -34,7 +34,7 @@ with Interfaces.C;
 package SDL.Events.Touches with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    --  Touch events.
    Finger_Down                : constant Event_Types := 16#0000_0700#;

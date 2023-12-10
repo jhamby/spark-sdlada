@@ -27,7 +27,7 @@
 package SDL.Platform with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    type Platforms is (Windows, Mac_OS_X, Linux, BSD, iOS, Android);
 

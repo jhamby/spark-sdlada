@@ -29,7 +29,7 @@ with SDL.Events.Joysticks;
 package SDL.Events.Controllers with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    --  Game controller events.
    Axis_Motion     : constant Event_Types := 16#0000_0650#;

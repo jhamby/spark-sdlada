@@ -25,5 +25,5 @@
 package SDL.Inputs with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 end SDL.Inputs;

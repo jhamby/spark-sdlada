@@ -27,7 +27,7 @@
 package SDL.Power with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    type State is
      (Unknown,    --  Cannot determine power status.

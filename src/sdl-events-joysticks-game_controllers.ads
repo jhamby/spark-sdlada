@@ -28,7 +28,7 @@
 package SDL.Events.Joysticks.Game_Controllers with
   SPARK_Mode
 is
-   pragma Preelaborate;
+   pragma Pure;
 
    type Axes is (Invalid,
                  Left_X,
